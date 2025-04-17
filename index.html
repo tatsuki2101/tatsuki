@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電話対応システム</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e1e1e">
+  <style>
+    body { font-family: sans-serif; margin: 10px; background-color: white; color: black; font-size: 16px; }
+    .dark-mode { background-color: #1e1e1e; color: #e0e0e0; }
+    input, textarea { width: 100%; padding: 10px; margin-top: 5px; font-size: 18px; border: 1px solid #ccc; }
+    button { padding: 10px; font-size: 16px; margin-top: 10px; width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>📞 電話対応システム</h1>
+  <label>名前: <input type="text" placeholder="名前を入力"></label><br>
+  <label>会社名: <input type="text" placeholder="会社名を入力"></label><br>
+  <textarea placeholder="ご用件をこちらに入力してください" rows="5"></textarea>
+  <button onclick="window.print()">🖨️ 印刷</button>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').then(() => {
+        console.log('Service Worker registered!');
+      });
+    }
+  </script>
+</body>
+</html>
